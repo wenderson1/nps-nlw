@@ -1,0 +1,24 @@
+Passo 1
+yarn init -y
+
+Passo 2
+yarn add express 
+-> express e um micro framework para trabalhar com o node
+
+Passo 3
+ yarn add @types/express -D 
+ -> para adicionar o tipo do express
+
+Passo 4 
+yarn add typescript -D
+->Para adicionar o typescript o -D é para desenvolvimento
+
+Passo 5
+yarn add ts-node-dev -D
+->Para converter o ts para o js automaticamente
+lembrar de adicionar no package.json 
+   "scripts": {
+        "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+    },
+
+Passo 6
