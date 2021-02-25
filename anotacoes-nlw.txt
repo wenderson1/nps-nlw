@@ -22,3 +22,10 @@ lembrar de adicionar no package.json
     },
 
 Passo 6
+Vamos usar o type orm, olhar documentção
+
+yarn typeorm migration:revert -> para desfazer a ultima migration
+"strictPropertyInitialization": false no tsconfig.json
+
+yarn add uuid -> para adicionar a biblioteca para criação de uuid
+yarn add @types/uuid -D -> para adicionar os tipos do UUID
