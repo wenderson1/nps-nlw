@@ -23,9 +23,31 @@ lembrar de adicionar no package.json
 
 Passo 6
 Vamos usar o type orm, olhar documentção
-
+yarn typeorm migration:create -n nome_migration - para criar a migration
 yarn typeorm migration:revert -> para desfazer a ultima migration
+$ yarn typeorm migration:run -> para rodar a migration
 "strictPropertyInitialization": false no tsconfig.json
 
 yarn add uuid -> para adicionar a biblioteca para criação de uuid
 yarn add @types/uuid -D -> para adicionar os tipos do UUID
+
+Testes Automatizados
+
+1-Testes Unitários
+
+2- Testes de integração
+->request ->routes =>  controller -> repository
+<- repository <-controller <- response
+
+3 - Ponta a Ponta (E2E)
+
+ yarn add jest @types/jest -D -> para instalar o jest, ferramenta de Teste
+
+ yarn jest --init para criar os arquivo de config
+
+ yarn add ts-jest -D
+ yarn test para rodar o teste
+
+ yarn add supertest @types/supertest -D - ferramenta para simular servidor
+
+ 
