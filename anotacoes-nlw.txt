@@ -50,4 +50,6 @@ Testes Automatizados
 
  yarn add supertest @types/supertest -D - ferramenta para simular servidor
 
+ biblioteca yup validations para fazer as validações
+
  
