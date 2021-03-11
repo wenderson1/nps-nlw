@@ -26,6 +26,8 @@ import "./database";
 import createConnection from './database';
 import { router } from "./routes";
 import { AppError } from './errors/AppError';
+import swaggerUi from 'swagger-ui-express';
+import * as swaggerDocument from './swagger.json';
 
 createConnection();
 const app = express();
@@ -44,4 +46,8 @@ app.use((err: Error, request: Request, response: Response, _next: NextFunction) 
     })
 })
 
+app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 export { app };
+  
+

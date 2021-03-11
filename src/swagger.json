@@ -1,0 +1,136 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "NPS_NLW",
+        "description": "Um projeto que envia email para clientes com pesquisa de opinião",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3333",
+    "basePath": "",
+    "tags": [{
+        "name": "NPS",
+        "description": "API for survey research"
+    }],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get all Users in System",
+                "parameters": []
+            },
+            "post": {
+                "tags": ["Users"],
+                "summary": "Create a user in system",
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Users that we want to create"
+                }]
+            }
+        },
+        "/survey": {
+            "get": {
+                "tags": [
+                    "Surveys"
+                ],
+                "summary": "Get all Surveys in System",
+                "parameters": []
+            },
+            "post": {
+                "tags": ["Surveys"],
+                "summary": "Create a survey in system",
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Survey that we want to create"
+                }]
+            }
+        },
+        "/sendMail": {
+            "post": {
+                "tags": ["sendMailController"],
+                "summary": "Create and send an email with the survey",
+                "parameters": []
+            }
+        },
+        "/nps/:survey_id": {
+            "get": {
+                "tags": ["npsController"],
+                "summary": "Get all answers that survey",
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Email that we want to create and send"
+                }]
+            }
+        }
+    },
+
+    "definitions": {
+        "id": {
+            "properties": {
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "Survey": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "Date"
+                }
+            }
+        },
+        "User": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "Date"
+                }
+            }
+        },
+        "SurveyUser": {
+            "type": "object",
+            "properties": {
+                "user": {
+                    "type": "User"
+                },
+                "survey_id": {
+                    "type": "string"
+                },
+                "survey": {
+                    "type": "Survey"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "created_at": {
+                    "type": "Date"
+                }
+            }
+        }
+    }
+}
